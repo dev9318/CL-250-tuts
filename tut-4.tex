@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=0.5in,bmargin=1in]{geometry}
+\usepackage[inline]{enumitem}
+\usepackage{cancel}
+
+\title{Solutions - Tutorial 4 of CL 250}
+\author{Dev Moxaj Desai}%\\
+%\small TA for D1-T5}
+\date{Spring 2021}
+
+\begin{document}
+\maketitle
+\begin{enumerate}[leftmargin=*]
+\item Let's assume $\alpha$ is a phase with mostly turpentine ($x_1 = 1$) and $\beta$ be the phase with purely water($x_2 = 1$).\newline
+As $x_1 \rightarrow 1$ we know that $\gamma_1 = 1$.\newline Hence,  $x_1^{\alpha}\gamma_1^\alpha P_1^{sat} = y_1 P$$\Rightarrow$  $P_1^{sat} = y_1 P$, similarly $P_2^{sat} = y_2 P$.
+\newline $P_1^{sat} = 0.177$ bar, $P_2^{sat} = 1.013$ bar (given)\newline
+Using $y_1 + y_2 = 1$, we have $P = P_1^{sat} + P_2^{sat} = 1.19$bar \newline
+Hence, $y_1 = \frac{0.177}{1.19} \approx 0.1487$\newline
+$y_2 = 1 - y_1 \approx 0.8513$\newline
+No. of moles of vapour ($n$) = $  \frac{1}{18*0.8513} \approx 0.06526$ Kmoles per sec\newline
+Weight of turpentine condensed = $ny_1M \approx 1.358 $ kg per one kg of water.
+
+\item Given, $T = 348$ K.
+$P_1^{sat} \approx 1.218$ and $P_2^{sat} \approx 0.8827$\newline
+$\gamma_1 = e^{2.821 (1-x_1)^2}$ and $\gamma_2 = e^{2.821 (1-x_2)^2}$\newline
+$x_1^{\alpha}\gamma_1^\alpha P_1^{sat} = x_1^{\beta}\gamma_1^\beta P_1^{sat} = y_1 P$ and $x_2^{\alpha}\gamma_2^\alpha P_2^{sat} = x_2^{\beta}\gamma_2^\beta P_2^{sat} = y_2 P$\newline
+For a LLE, $x_1^{\alpha}\gamma_1^\alpha = x_2^{\alpha}\gamma_2^\alpha$ $\Rightarrow$ $\displaystyle \frac{ y_1 \cancel{P}}{y_2 \cancel{P}} =\displaystyle \frac{x_1^{\alpha}\gamma_1^\alpha P_1^{sat}}{x_2^{\alpha}\gamma_2^\alpha P_2^{sat}} = \displaystyle \frac{P_1^{sat}}{P_2^{sat}}$\newline
+Using, $y_1 + y_2 = 1$ we have $y_1 \approx 0.5795$.\newline
+To solve for $x_1^{\alpha}$ and $x_1^{\beta}$ solve $A(1-2x_1) = ln(\frac{1-x_1}{x_1})$, where A is 2.821. (this equation is taken from LLE solved problem 4)\newline
+After finding $x_1^{\alpha}$ we can find P.
+
+\item For a SLE, $x_i\gamma_i=\psi_i$\newline
+$\psi = e^{ \frac{\Delta H^{fus}}{RT_m} \frac{(T-T_m)}{T}}$ $\Rightarrow$ $\psi_i \approx  0.1264$\newline
+Hence, $\gamma_1 = \displaystyle \frac{\psi_i}{x_i} \approx 3.75 \times 10^8$
+
+\item For ideal states, $\gamma_i^l = \gamma_i^s = 1$.\newline
+Hence, $x_i = z_i\psi_i$.\newline
+Using, $x_1 + x_2 = 1$ and $z_1 + z_2 = 1$ we have $x_1 = \displaystyle \frac{\psi_1(1-\psi_2)}{\psi_1-\psi_2}$ and $x_2 = \displaystyle \frac{\psi_2(1-\psi_1)}{\psi_2-\psi_1}$.\newline
+We know, $\psi = e^{ \frac{\Delta H^{fus}}{RT_m} \frac{(T-T_m)}{T}}$.\newline
+We can find $\frac{x_1}{x_2}$ in terms of $\psi$, the only unknown being T. Using an appropriate solver (like desmos) we can find T.
+
+\item For ideal solution,  $\gamma_i^l = 1$. Assuming immisibility of species in solid state, $z_i\gamma_i^s = 1$.\newline
+Hence, $x_i = \psi_i$. Using $x_1 + x_2 = 1$ we have $\psi_1 + \psi_2 = 1$.\newline
+We know, $\psi = e^{ \frac{\Delta H^{fus}}{RT_m} \frac{(T-T_m)}{T}}$.\newline Substituing the above in $\psi_1 + \psi_2 = 1$ and using a solver (like desmos) gives us $T_e$. (Eutectic temperature) \newline Using  $x_i = \psi_i$ we can find $x_{1,e}$.
+
+\item Ideal solubility is given by $\displaystyle \frac{P_i^{sat}}{P}$. Given, $T = 308$ K. $P_1^{sat} = P_1^{sub} \approx 2.751 \times 10^{-4}$ bar.\newline $\displaystyle \frac{P_1^{sat}}{P} = 2.751 \times 10^{-4} = $ ideal solubility.
+
+\item Taking napthelene as 1 and $CO_2$ as 2. Solubility $(x_1)$ $ = \displaystyle \frac{P_1^{sat}E}{P}$.\newline Asumming $\phi_1^{sat} \approx 1$ as $ P_1^{sat} \approx 2.751 \times 10^{-4}$ bar (very low) as calculated in question 6. \newline
+We know that $ln\hat{\phi_1} = \frac{P}{RT}(B_{11} + y_2^2\delta_{12})$.\newline Assuming $y_2 \approx 1$ and taking $P = 10$ bar and $T = 308$ K we get $\hat{\phi_1} \approx 0.793$.\newline Taking $V_1^S = 112$ cc per mole, we get $e^{\frac{V_1^S(P-P_1^{sat})}{RT}} \approx 1.044$.\newline
+We know $ E = \frac{\phi_1^{sat}}{\hat{\phi_1}} e^{\frac{V_1^S(P-P_1^{sat})}{RT}} \approx 1.317$. Hence, $y_1 = 3.62 \times 10^{-5}$.
+\end{enumerate}
+\end{document}
